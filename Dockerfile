@@ -1,6 +1,9 @@
 # Use the official Tomcat base image
 FROM tomcat:9.0
 
+# Install a shell (bash) in the container
+RUN apt-get update && apt-get install -y bash
+
 # Copy the Spring Boot JAR file to the webapps directory in the container
 COPY target/*.jar /usr/local/tomcat/webapps/webapp.jar
 
